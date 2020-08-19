@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--mvc-->
+    <title>循环对象数组</title>
+    <script src="angular.min.js"></script>
+
+    <script>
+        //因为angular是模块的,需要先定义一个模块
+        var app = angular.module('myApp',[]);
+        //模块中定义c
+        app.controller('myController', function ($scope) {
+            $scope.list=[{'id':1, 'name':'华为','firstchar':'H'},{'id':1, 'name':'Opp','firstchar':'O'},{'id':1, 'name':'苹果','firstchar':'P'},{'id':1, 'name':'三星','firstchar':'S'}];
+        });
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="myController" >
+    <table>
+        <tr ng-repeat="entity in list">
+            <td>{{entity.id}}</td>
+            <td>{{entity.name}}</td>
+            <td>{{entity.firstchar}}</td>
+        </tr>
+    </table>
+</body>
+</html>

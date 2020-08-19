@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--mvc-->
+    <title>事件指令</title>
+    <script src="angular.min.js"></script>
+
+    <script>
+        //因为angular是模块的,需要先定义一个模块
+        var app = angular.module('myApp',[]);
+        //模块中定义c
+        app.controller('myController', function ($scope) {
+            $scope.add=function () {
+                $scope.z = parseInt($scope.x) + parseInt($scope.y);
+            }
+        });
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="myController" >
+    请输入x:<input ng-model="x"/><!--$scope.x-->
+    请输入y:<input ng-model="y"/><!--$scope.x--><br>
+    <button ng-click="add()">运算</button>
+    {{z}}<!--$scope.add-->
+</body>
+</html>
